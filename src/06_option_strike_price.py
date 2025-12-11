@@ -26,10 +26,8 @@ def contractInfo():
     endpoint = "iserver/secdef/info"
     
     conid = "conid=11004968"
-    # oracle
-    # conid = "conid=2147483647"
     # conid CROX 538442895
-    # conid = "conid=120549661"
+    # conid = "conid=538442895"
     # secType = "secType=FUT"
     # "error": "Bad Request: strike is required for warrant and option",
     secType = "secType=FUT"
@@ -40,8 +38,8 @@ def contractInfo():
     params = "&".join([conid,secType,month,exchange])
     request_url="".join([base_url,endpoint,"?",params])
     
-    contract_req = requests.get(url=request_url,verify=False)
-    contract_json = json.dumps(contract_req.json(),indent=2)
+    # contract_req = requests.get(url=request_url,verify=False)
+    # contract_json = json.dumps(contract_req.json(),indent=2)
     
     
     
@@ -55,11 +53,33 @@ def contractInfo():
     contract_json = json.dumps(contract_req.json(),indent=2)
     print(contract_json)
     
-
+def contractStrikes():
+    base_url = "https://localhost:5000/v1/api/"
+    endpoint = "iserver/secdef/strikes"
+    
+    # conid CROX 538442895
+    #conid = "conid=538442895"
+    conid = "conid=11004968"
+    secType = "secType=FOP"
+    month = "month=DEC25"
+    exchange = "exchange=CME"
+    strike = "strike=150"
+    right = "right=C"
+    
+    params = "&".join([conid,secType,month,exchange,strike,right])
+    request_url="".join([base_url,endpoint,"?",params])
+    
+    contract_req = requests.get(url=request_url,verify=False)
+    print(contract_req)
+    
+    contract_json = json.dumps(contract_req.json(),indent=2)
+    print(contract_json)
+    
 if __name__ == "__main__":
     # confirmStatus()
     # contractSearch()
-    contractInfo()
+    # contractInfo()
+    contractStrikes()
 
 # INSIDE VENV
 # pip3 install requests

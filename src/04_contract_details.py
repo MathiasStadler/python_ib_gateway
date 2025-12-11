@@ -21,7 +21,7 @@ def contractSearch():
     base_url = "https://localhost:5000/v1/api/"
     endpoint = "iserver/secdef/search"
     # ES Futures 
-    json_body={"symbol" : "CROX","secType" : "STK","name" : False}
+    json_body={"symbol" : "ORCL","secType" : "STK","name" : False}
     
     contract_req = requests.post(url=base_url+endpoint,verify=False,json=json_body)
     
