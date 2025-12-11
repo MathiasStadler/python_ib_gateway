@@ -4,6 +4,8 @@
 # INSIDE VENV
 # pip3 install websocket-client
 
+#ä change after 7:39
+
 import websocket
 import time
 import ssl
@@ -20,12 +22,8 @@ def on_close(ws):
 def on_open(ws):
     print("Opened Connection")
     time.sleep(3)
-    conids = ["265598","8314" ]
-    # conids = ["8314" ]
+    ws.send('sor+{}')
     
-    for conid in conids:
-        print("DEBUG {}".format(conid))
-        ws.send('smd+'+conid+'+{"fields":["31","84","86"]}')
         
 if __name__ == "__main__":
     ws = websocket.WebSocketApp(

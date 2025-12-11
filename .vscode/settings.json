@@ -4,6 +4,7 @@
         "conids",
         "IBKR",
         "reqs",
+        "secdef",
         "sslopt",
         "venv"
     ]
