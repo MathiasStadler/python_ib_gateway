@@ -2,7 +2,7 @@
 
 - Client Portal API Documentation & Reference Guide [![alt text][1]](https://interactivebrokers.github.io/cpwebapi/)
 - Contract Search [![alt text][1]](https://www.interactivebrokers.com/campus/trading-lessons/contract-search/)
-
+- Handling Options Chains [![alt text][1]](https://www.interactivebrokers.com/campus/ibkr-quant-news/handling-options-chains/)
 <!-- ktf -->
 For further steps, see Project path [![alt text][1]](project_path.md)
 <!-- download the link sign -->
