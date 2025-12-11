@@ -24,7 +24,12 @@ def contractInfo():
     # info instead search
     # endpoint = "iserver/secdef/search"
     endpoint = "iserver/secdef/info"
-    conid = "conid=11004968"
+    
+    # conid = "conid=11004968"
+    # conid CROX 538442895
+    conid = "conid=538442895"
+    # secType = "secType=FUT"
+    # "error": "Bad Request: strike is required for warrant and option",
     secType = "secType=FUT"
     # month = "month=SEP23"
     month = "month=DEC25"
