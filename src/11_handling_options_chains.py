@@ -14,6 +14,7 @@ def secdefSearch(symbol, listingExchange):
   for contract in search_request.json():
     if contract["description"] == listingExchange:
       underConid = contract["conid"]
+      print("" ,underConid)
 
       for secType in contract["sections"]:
          if secType["secType"] == "OPT":
@@ -75,6 +76,7 @@ def writeResult(contractDict):
 if __name__ == "__main__":
   # I'm looking for the U.S. Apple Incorporated company listed on NASDAQ
   underConid,months = secdefSearch("AAPL", "NASDAQ")
+  # underConid,months = secdefSearch("TREX", "NASDAQ")
   
   print("=> " + underConid)
   # I only want the front month. 
