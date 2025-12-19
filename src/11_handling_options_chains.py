@@ -33,7 +33,7 @@ def secdefStrikes(underConid,month):
 
   strikes = strike_request.json()["put"]
   for strike in strikes:
-    if strike>snapshot-10 and strike<snapshot+10:
+    if strike>snapshot-30 and strike<snapshot+30:
       itmStrikes.append(strike)
   return itmStrikes
 
@@ -46,6 +46,7 @@ def secdefInfo(conid, month, strike):
   contracts = []
 
   for contract in info_request.json():
+    print(contract)
     contractDetails = {"conid": contract["conid"], 
                        "symbol": contract["symbol"],
                        "strike": contract["strike"],
@@ -82,7 +83,7 @@ if __name__ == "__main__":
   # I only want the front month. 
   # Users could always grab all months, or pull out a specific value, but sending the 0 value always gives me the first available contract.
   
-  month = months[0]
+  month = months[1]
 
   # We'll be calling our Strikes endpoint to pull in the money strike prices rather than all strikes.
   itmStrikes = secdefStrikes(underConid,month)
